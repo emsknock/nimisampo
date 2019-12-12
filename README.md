@@ -2,6 +2,8 @@
 
 A ReactJS project for browsing all the first names registered in Finland. Intended to help give inspiration to anyone wanting to change their name.
 
+![Screenshot](https://i.imgur.com/Y3NTWlz.jpg)
+
 By default the following names have been filtered out:
  * All compound names, like Ville-Pekka or Veli-Matti
  * All patronyms and matronyms, like Matintyttö, ibn Idris, or Einarsdottir
