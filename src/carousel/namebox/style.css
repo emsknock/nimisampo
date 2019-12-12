@@ -1,0 +1,40 @@
+.namebox {
+    display: block;
+    align-self: stretch;
+    font-size: 2rem;
+    color: #00000073;
+    padding-left: 2rem;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.namebox * {
+    pointer-events: none;
+}
+.namebox input {
+    display: none;
+}
+.namebox.--on {
+    color: #000000ff;
+}
+
+.namebox__indicator {
+    display: inline-block;
+    will-change: opacity, transform;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: opacity 0.2s, transform 0.15s;
+}
+.namebox.--on .namebox__indicator {
+    opacity: 1;
+    transform: translateX(0rem);
+}
+
+.namebox__value {
+    display: inline-block;
+    will-change: transform;
+    transform: translateX(-1rem);
+    transition: transform 0.15s;
+}
+.namebox.--on .namebox__value {
+    transform: translateX(0.5rem);
+}

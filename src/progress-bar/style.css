@@ -1,0 +1,21 @@
+.progress {
+    padding: 1rem 1.5rem 2rem 1.5rem;
+}
+.progress__text {
+    color: #00000073;
+    margin-bottom: 5px;
+}
+.progress__bg {
+    height: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #00000021;
+}
+.progress__bar {
+    height: 5px;
+    width: 40%;
+    will-change: width;
+    transition: width 0.2s;
+    border-radius: 5px;
+    background-color: #000000ff;
+}
