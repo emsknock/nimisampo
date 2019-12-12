@@ -13,6 +13,8 @@ const combinedFilter = combineFilters([
     ([n]) => n.includes("poika"),
     ([n]) => n.includes("tytär"),
     ([n]) => n.includes("tyttö"),
+    ([n]) => n.includes("bin"),
+    ([n]) => n.includes("ibn"),
     ([n]) => /son$/.test(n),
     ([n]) => /dott[ie]r$/.test(n),
 ]);
