@@ -2,7 +2,7 @@
 
 A ReactJS project for browsing all the first names registered in Finland. Intended to help give inspiration to anyone wanting to change their name.
 
-![Screenshot](https://i.imgur.com/Y3NTWlz.jpg)
+![Screenshot](https://i.imgur.com/7MtP7FW.jpg)
 
 By default the following names have been filtered out:
  * All compound names, like Ville-Pekka or Veli-Matti
