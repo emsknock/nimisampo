@@ -14,11 +14,14 @@ const App: FC<{}> = () => {
     const [likedNames, setLikedNames] = useState<string[]>([]);
 
     const checkName = (name: string) => {
-        if (likedNames.includes(name)) {
-            setLikedNames(likedNames.filter(n => name !== n));
-        } else {
-            setLikedNames(likedNames.concat(name));
-        }
+        
+        const newList = likedNames.includes(name)
+            ? likedNames.filter(n => name !== n)
+            : likedNames.concat(name);
+
+        localStorage.setItem("liked-names", JSON.stringify(newList));
+        setLikedNames(newList);
+    
     };
 
     const nameList: string[] = useMemo(
