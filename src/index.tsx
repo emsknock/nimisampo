@@ -7,11 +7,16 @@ import { ProgressBar } from "./progress-bar";
 import { Carousel } from "./carousel";
 import { getNameList } from "./data";
 
+const getSavedNames = (): string[] => {
+    const listString = localStorage.getItem("liked-names") ?? "[]";
+    return JSON.parse(listString);
+}
+
 const App: FC<{}> = () => {
 
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [currentPage, setPage] = useState(0);
-    const [likedNames, setLikedNames] = useState<string[]>([]);
+    const [likedNames, setLikedNames] = useState(getSavedNames());
 
     const checkName = (name: string) => {
         
