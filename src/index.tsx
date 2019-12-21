@@ -11,11 +11,15 @@ const getSavedNames = (): string[] => {
     const listString = localStorage.getItem("liked-names") ?? "[]";
     return JSON.parse(listString);
 }
+const getSavedPage = (): number => {
+    const savedPage = localStorage.getItem("saved-page");
+    return Number(savedPage);
+}
 
 const App: FC<{}> = () => {
 
     const [itemsPerPage, setItemsPerPage] = useState(10);
-    const [currentPage, setPage] = useState(0);
+    const [currentPage, setPage_Unsafe] = useState(getSavedPage());
     const [likedNames, setLikedNames] = useState(getSavedNames());
 
     const checkName = (name: string) => {
@@ -27,6 +31,10 @@ const App: FC<{}> = () => {
         localStorage.setItem("liked-names", JSON.stringify(newList));
         setLikedNames(newList);
 
+    };
+    const setPage = (page: number) => {
+        localStorage.setItem("saved-page", page.toString());
+        setPage_Unsafe(page);
     };
 
     const nameList: string[] = useMemo(
