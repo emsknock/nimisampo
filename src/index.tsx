@@ -5,22 +5,15 @@ import * as serviceWorker from "./serviceWorker";
 
 import { ProgressBar } from "./progress-bar";
 import { Carousel } from "./carousel";
-import { getNameList } from "./data";
 
-const getSavedNames = (): string[] => {
-    const listString = localStorage.getItem("liked-names") ?? "[]";
-    return JSON.parse(listString);
-}
-const getSavedPage = (): number => {
-    const savedPage = localStorage.getItem("saved-page");
-    return Number(savedPage);
-}
+import { getNameList } from "./data";
+import { useStorageState } from "./use-storage-state";
 
 const App: FC<{}> = () => {
 
-    const [itemsPerPage, setItemsPerPage] = useState(10);
-    const [currentPage, setPage_Unsafe] = useState(getSavedPage());
-    const [likedNames, setLikedNames] = useState(getSavedNames());
+    const [itemsPerPage] = useState(10);
+    const [currentPage, setPage] = useStorageState("saved-page", 0);
+    const [likedNames, setLikedNames] = useStorageState<string[]>("liked-names", []);
 
     const checkName = (name: string) => {
 
@@ -31,10 +24,6 @@ const App: FC<{}> = () => {
         localStorage.setItem("liked-names", JSON.stringify(newList));
         setLikedNames(newList);
 
-    };
-    const setPage = (page: number) => {
-        localStorage.setItem("saved-page", page.toString());
-        setPage_Unsafe(page);
     };
 
     const nameList: string[] = useMemo(
