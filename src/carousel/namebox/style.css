@@ -6,6 +6,7 @@
     padding-left: 2rem;
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    -webkit-tap-highlight-color: transparent;
 }
 .namebox * {
     pointer-events: none;
