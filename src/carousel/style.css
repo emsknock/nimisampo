@@ -1,8 +1,6 @@
 .carousel {
 
     flex-grow: 1;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
     
 }
 .carousel__list {
