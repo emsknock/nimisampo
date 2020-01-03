@@ -21,7 +21,6 @@ const App: FC<{}> = () => {
             ? likedNames.filter(n => name !== n)
             : likedNames.concat(name);
 
-        localStorage.setItem("liked-names", JSON.stringify(newList));
         setLikedNames(newList);
 
     };
