@@ -33,6 +33,10 @@ const App: FC<{}> = () => {
     );
 
     return <>
+        <ProgressBar
+            value={currentPage + 1}
+            max={Math.ceil(nameList.length / itemsPerPage)}
+        />
         <Carousel
             list={nameList}
             page={currentPage}
@@ -40,10 +44,6 @@ const App: FC<{}> = () => {
             checkedItems={likedNames}
             checkItem={checkName}
             itemsPerPage={itemsPerPage}
-        />
-        <ProgressBar
-            value={currentPage + 1}
-            max={Math.ceil(nameList.length / itemsPerPage)}
         />
     </>;
 
