@@ -1,21 +1,20 @@
 import React, { FC, useState, useMemo } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-
-import { ProgressBar } from "./progress-bar";
-import { Carousel } from "./carousel";
+import "./index.css";
 
 import { getNameList } from "./data";
 import { useStorageState } from "./use-storage-state";
 
-const App: FC<{}> = () => {
+import { MainView } from "./views/main";
 
-    const [itemsPerPage] = useState(10);
-    const [currentPage, setPage] = useStorageState("saved-page", 0);
+const App: FC = () => {
+
+    const namesPerPage = 10;
+    const [currentPageIdx, setPageIdx] = useStorageState("saved-page", 0);
     const [likedNames, setLikedNames] = useStorageState<string[]>("liked-names", []);
 
-    const checkName = (name: string) => {
+    const onCheckName = (name: string) => {
 
         const newList = likedNames.includes(name)
             ? likedNames.filter(n => name !== n)
@@ -32,22 +31,16 @@ const App: FC<{}> = () => {
         []
     );
 
-    return <>
-        <Carousel
-            list={nameList}
-            page={currentPage}
-            setPage={setPage}
-            checkedItems={likedNames}
-            checkItem={checkName}
-            itemsPerPage={itemsPerPage}
-        />
-        <ProgressBar
-            value={currentPage + 1}
-            max={Math.ceil(nameList.length / itemsPerPage)}
-        />
-    </>;
+    return <MainView
+        nameList={nameList}
+        namesPerPage={namesPerPage}
+        pageIdx={currentPageIdx}
+        setPageIdx={setPageIdx}
+        onCheckName={onCheckName}
+        likedNames={likedNames}
+    />;
 
-}
+};
 
 ReactDOM.render(
     <App />,

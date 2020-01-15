@@ -26,10 +26,10 @@ export const Carousel: FC<props> = ({
     const pageCount = Math.ceil(list.length / itemsPerPage);
 
     const startIdx = page * itemsPerPage;
-    const items = list.slice(startIdx, startIdx + itemsPerPage);
+    const itemsToShow = list.slice(startIdx, startIdx + itemsPerPage);
 
     const transitions = useTransition(
-        [items],
+        [itemsToShow],
         ([name]) => name,
         {
             from: { opacity: 0, transform: "translate3d(-1rem, 0, 0)" },
@@ -40,10 +40,13 @@ export const Carousel: FC<props> = ({
     );
 
     const getDragHandlers = useDrag(
-        ({ swipe: [sx] }) => {
-            switch (sx) {
+        ({ swipe: [xDirection] }) => {
+            switch (xDirection) {
+                // Swipe direction to the right — change to previous page
                 case 1: return (page !== 0) && setPage(i => i - 1);
+                // Swipe direction to the left — change to next page
                 case -1: return (page !== pageCount - 1) && setPage(i => i + 1);
+                // Swipe direction vertical, no x-component
                 default: return;
             }
         },
