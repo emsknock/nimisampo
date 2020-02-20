@@ -12,7 +12,7 @@ interface props {
     pageIdx: number,
     setPageIdx: React.Dispatch<React.SetStateAction<number>>,
 
-    onCheckName: (name: string) => void,
+    onCheckName: (name: string, newValue: boolean) => void,
 
 }
 

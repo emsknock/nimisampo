@@ -14,9 +14,9 @@ const App: FC = () => {
     const [currentPageIdx, setPageIdx] = useStorageState("saved-page", 0);
     const [likedNames, setLikedNames] = useStorageState<string[]>("liked-names", []);
 
-    const onCheckName = (name: string) => {
+    const onCheckName = (name: string, checked: boolean) => {
 
-        const newList = likedNames.includes(name)
+        const newList = checked
             ? likedNames.filter(n => name !== n)
             : likedNames.concat(name);
 

@@ -12,7 +12,7 @@ const ListItem = ({ value, isChecked, onChange }) =>
             id={`checkbox-${value}`}
             value={value}
             checked={isChecked}
-            onChange={e => onChange(e.target.checked)}
+            onChange={e => onChange(!e.target.checked)}
         />
         <label htmlFor={`checkbox-${value}`} className="carousel__label" >
             <span className="carousel__checkmark">→</span>
