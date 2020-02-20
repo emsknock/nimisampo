@@ -21,27 +21,3 @@ body {
     display: flex;
     flex-direction: column;
 }
-.carousel {
-    flex-grow: 1;
-    white-space: nowrap;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.card {
-
-    flex-shrink: 0;
-    width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.namelist {
-    font-size: 2.5rem;
-}
