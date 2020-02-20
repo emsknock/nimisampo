@@ -24,6 +24,7 @@
     display: none;
 }
 .carousel__label {
+    display: block;
     -webkit-tap-highlight-color: transparent;
 }
 
