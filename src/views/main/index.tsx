@@ -29,10 +29,10 @@ export const MainView: FC<props> = ({
         <Carousel
             list={nameList}
             checkedItems={likedNames}
-            itemsPerPage={namesPerPage}
+            onChangeItem={onCheckName}
             page={pageIdx}
-            setPage={setPageIdx}
-            checkItem={onCheckName}
+            onChangePage={setPageIdx}
+            itemsPerPage={namesPerPage}
         />
         <ProgressBar
             value={pageIdx + 1}

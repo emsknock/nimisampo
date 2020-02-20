@@ -4,13 +4,13 @@ import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 
 import { getNameList } from "./data";
-import { useStorageState } from "./use-storage-state";
+import { useStorageState } from "./utils/use-storage-state";
 
 import { MainView } from "./views/main";
 
 const App: FC = () => {
 
-    const namesPerPage = 10;
+    const namesPerPage = 8;
     const [currentPageIdx, setPageIdx] = useStorageState("saved-page", 0);
     const [likedNames, setLikedNames] = useStorageState<string[]>("liked-names", []);
 
