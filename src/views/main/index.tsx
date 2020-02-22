@@ -1,4 +1,4 @@
-import React, {FC, useState, useMemo} from "react";
+import React, { FC } from "react";
 
 import { ProgressBar } from "./progress-bar";
 import { Carousel } from "./carousel";
