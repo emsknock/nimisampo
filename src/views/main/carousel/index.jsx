@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SwipeableViews from 'react-swipeable-views';
 import { virtualize, bindKeyboard } from 'react-swipeable-views-utils';
 import "./style.css";

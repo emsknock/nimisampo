@@ -1,4 +1,4 @@
-import React, { FC, useState, useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
@@ -30,6 +30,7 @@ const App: FC = () => {
         },
         []
     );
+    console.log(nameList);
 
     return <MainView
         nameList={nameList}
