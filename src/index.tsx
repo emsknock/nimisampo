@@ -4,7 +4,7 @@ import * as serviceWorker from "./serviceWorker";
 import "./index.css";
 
 import { getNameList } from "./data";
-import { useStorageState } from "./utils/use-storage-state";
+import { useStorageState } from "./hooks/use-storage-state";
 
 import { MainView } from "./views/main";
 
