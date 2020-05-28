@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 
-import { ProgressBar } from "./progress-bar";
 import { Carousel } from "./carousel";
+import { InitialScroller } from "./initial-scroller";
+import { ProgressBar } from "./progress-bar";
 
 interface props {
 
@@ -34,6 +35,7 @@ export const MainView: FC<props> = ({
             onChangePage={setPageIdx}
             itemsPerPage={namesPerPage}
         />
+        <InitialScroller />
         <ProgressBar
             value={pageIdx + 1}
             max={Math.ceil(nameList.length / namesPerPage)}

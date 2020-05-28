@@ -1,0 +1,40 @@
+.initials-scroller {
+    display: flex;
+    justify-content: center;
+}
+
+.initials-scroller__list {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    
+    width: 100vw;
+}
+
+.initials-scroller__list::-webkit-scrollbar {
+    display: none;
+}
+
+.initials__letter {
+    scroll-snap-align: center;
+    text-transform: uppercase;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.initials__letter.--sel {
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+.initials-scroller__spacer {
+    width: calc(50% - 1rem);
+    flex-shrink: 0;
+}
