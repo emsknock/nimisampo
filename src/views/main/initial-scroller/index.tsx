@@ -47,6 +47,7 @@ export const InitialScroller: FC = () => {
             }
             <div className="initials-scroller__spacer" />
         </div>
+        <div className="initials-scroller__spotlight" />
     </div>
 
 }

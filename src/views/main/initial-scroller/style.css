@@ -1,6 +1,5 @@
 .initials-scroller {
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
 
 .initials-scroller__list {
@@ -26,15 +25,27 @@
     align-items: center;
     font-size: 1.5rem;
     border-radius: 50%;
+    opacity: 0.5;
 }
 
 .initials__letter.--sel {
     font-weight: bold;
-    background-color: black;
-    color: white;
 }
 
 .initials-scroller__spacer {
-    width: calc(50% - 1rem);
+    width: calc(50% - 24px);
     flex-shrink: 0;
+}
+
+.initials-scroller__spotlight {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    backdrop-filter: invert(100%) brightness(200%);
+    display: flex;
+    overflow: hidden;
 }
