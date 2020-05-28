@@ -1,12 +1,15 @@
 import React, { FC, useMemo } from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
+import smoothscroll from "smoothscroll-polyfill";
 import "./index.css";
 
 import { getNameList } from "./data";
 import { useStorageState } from "./hooks/use-storage-state";
 
 import { MainView } from "./views/main";
+
+smoothscroll.polyfill();
 
 const App: FC = () => {
 
