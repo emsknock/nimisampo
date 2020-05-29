@@ -41,7 +41,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
     height: 48px;
     width: 48px;
     border-radius: 50%;
